@@ -41,6 +41,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y xonsh
+          xonsh --version
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
