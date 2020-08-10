@@ -37,6 +37,10 @@ jobs:
         run: echo "::set-env name=GIT_BRANCH::${{ github.head_ref }}"
       - name: Set global git conf
         run: git config --global user.email "" && git config --global user.name "github-actions"
+      - name: Install xonsh
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y xonsh
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
