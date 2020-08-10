@@ -9,7 +9,6 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
         php-versions: ['7.4']
-    if: startsWith(github.head_ref, 'RC-') != false && endsWith(github.head_ref, '-major') != false  || endsWith(github.head_ref, '-minor') != false || endsWith(github.head_ref, '-patch') != false
     steps:
       - name: Checkout ${{ github.event.repository.name }}
         uses: wirecard/checkout@v2.0.0
@@ -18,7 +17,7 @@ jobs:
       - name: Checkout shopsystems-ui-test-runner
         uses: wirecard/checkout@v2.0.0
         with:
-          repository: 'wirecard/shopsystems-ui-test-runner'
+          repository: 'brkicadis/shopsystems-ui-test-runner'
           ref: 'master'
           path: shopsystems-ui-test-runner
       - name: PHP version setup
