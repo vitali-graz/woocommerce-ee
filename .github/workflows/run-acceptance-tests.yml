@@ -48,6 +48,7 @@ jobs:
           PATCH_RELEASE: 'patch'
           MINOR_RELEASE: 'minor'
           MAJOR_RELEASE: 'major'
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
       - name: Acceptance tests passed
         if: ${{ success() }}
         run: shopsystems-ui-test-runner/.bin/upload-logs-and-notify.sh
