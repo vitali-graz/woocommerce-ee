@@ -40,7 +40,7 @@ jobs:
       - name: Install xonsh
         run: |
           echo "::set-env name=PYENV_VERSION::3.6.3"
-          apt-get install python3-setuptools
+          sudo apt-get install python3-setuptools
           pip3 install xonsh
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
