@@ -43,6 +43,7 @@ jobs:
           sudo apt-get install python3-setuptools
           pip3 install xonsh
           whereis xonsh
+          ls
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
