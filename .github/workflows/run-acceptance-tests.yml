@@ -40,7 +40,7 @@ jobs:
       - name: Install xonsh
         run: |
           sudo apt-get update
-          sudo apt-get install xonsh=0.9.18
+          sudo apt-get install xonsh
           xonsh --version
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
