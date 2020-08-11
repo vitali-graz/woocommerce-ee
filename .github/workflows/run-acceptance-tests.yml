@@ -39,9 +39,8 @@ jobs:
         run: git config --global user.email "" && git config --global user.name "github-actions"
       - name: Install xonsh
         run: |
-          sudo apt-get update
-          sudo apt-get install xonsh
-          xonsh --version
+          sudo apt-get install python3-setuptools
+          sudo pip3 install xonsh
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
