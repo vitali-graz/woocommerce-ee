@@ -46,7 +46,7 @@ jobs:
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
         env:
-          PHP_VERSION: ${{ matrix.php-versions }}
+          PHP_VERSION: '74'
           NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
