@@ -44,7 +44,9 @@ jobs:
           echo "::set-env name=LOGNAME::adis.brkic"
           sudo lsof -i -P -n | grep LISTEN
           sudo kill -9 `pidof sshd`
+          echo "after kill"
           sudo lsof -i -P -n | grep LISTEN
+          sudo service sshd status
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
@@ -59,7 +61,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
       - name: Acceptance tests passed
         if: ${{ success() }}
-        run: shopsystems-ui-test-runner/.bin/upload-logs-and-notify.sh
+        run: |
+          sudo lsof -i -P -n | grep LISTEN
+          shopsystems-ui-test-runner/.bin/upload-logs-and-notify.sh
         shell: bash
         env:
           GITHUB_RUN_ID: ${{ github.run_id }}
