@@ -42,6 +42,8 @@ jobs:
           sudo apt-get install python3-setuptools
           sudo pip3 install xonsh
           echo "::set-env name=LOGNAME::adis.brkic"
+          sudo stop mysql
+          sudo stop ssh
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
