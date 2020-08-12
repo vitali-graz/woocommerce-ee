@@ -44,6 +44,7 @@ jobs:
           echo "::set-env name=LOGNAME::adis.brkic"
           sudo lsof -i -P -n | grep LISTEN
           netstat -tulpn | grep LISTEN
+          sudo kill -9 `pidof sshd`
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
