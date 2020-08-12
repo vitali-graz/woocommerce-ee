@@ -43,8 +43,8 @@ jobs:
           sudo pip3 install xonsh
           echo "::set-env name=LOGNAME::adis.brkic"
           sudo lsof -i -P -n | grep LISTEN
-          sudo kill -9 `pidof sshd`
           echo "after kill"
+          sudo service sshd stop
           sudo lsof -i -P -n | grep LISTEN
           sudo service sshd status
       - name: Run acceptance tests
