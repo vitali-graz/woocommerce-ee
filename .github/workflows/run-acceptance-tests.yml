@@ -46,7 +46,6 @@ jobs:
           echo "after kill"
           sudo service sshd stop
           sudo lsof -i -P -n | grep LISTEN
-          sudo service sshd status
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
