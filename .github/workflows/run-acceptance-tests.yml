@@ -42,8 +42,8 @@ jobs:
           sudo apt-get install python3-setuptools
           sudo pip3 install xonsh
           echo "::set-env name=LOGNAME::adis.brkic"
-          lsof -i -P -n | grep LISTEN
-          exit 1
+          sudo lsof -i -P -n | grep LISTEN
+          netstat -tulpn | grep LISTEN
       - name: Run acceptance tests
         run: shopsystems-ui-test-runner/.bin/setup-and-run-ui-tests.sh
         shell: bash
