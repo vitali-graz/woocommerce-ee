@@ -37,7 +37,7 @@ jobs:
         run: echo "::set-env name=GIT_BRANCH::${{ github.head_ref }}"
       - name: Set global git conf
         run: git config --global user.email "" && git config --global user.name "github-actions"
-      - name: Install and setup xonsh for ci
+      - name: Install and setup xonsh
         run: |
           sudo apt-get install python3-setuptools
           sudo pip3 install xonsh
